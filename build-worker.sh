@@ -18,8 +18,8 @@ docker run -v $PWD:/tmp/pause -w /tmp/pause hypriot/rpi-golang go build --ldflag
 docker build -t gcr.io/google_containers/pause:0.8.0 .
 
 cd ../
-curl -fsSL -o hyperkube https://github.com/project31/kubernetes-arm/raw/master/hyperkube
-curl -fsSL -o kubelet https://github.com/project31/kubernetes-arm/raw/master/kubelet
+curl -fsSL -o hyperkube https://github.com/stevesloka/kubernetes-arm/blob/1.1.2/hyperkube
+curl -fsSL -o kubelet https://github.com/stevesloka/kubernetes-arm/blob/1.1.2/kubelet
 
 chmod +x hyperkube
 mkdir images
@@ -41,8 +41,3 @@ systemctl start kubelet
 curl -fsSL -o kubectl https://storage.googleapis.com/kubernetes-release/release/v1.0.3/bin/linux/arm/kubectl
 chmod +x kubectl
 mv kubectl /usr/bin/kubectl
-
-
-
-
-
